@@ -48,19 +48,19 @@ extension SystemServices {
     }
 
     
-    var wifiIpAddress: String? {
+    public var wifiIpAddress: String? {
         getIpAddress(.wifi)
     }
     
-    var cellularIpAddress: String? {
+    public var cellularIpAddress: String? {
         getIpAddress(.cellular)
     }
     
-    var currentIpAddress: String? {
+    public var currentIpAddress: String? {
         wifiIpAddress ?? cellularIpAddress
     }
     
-    var wifiRouterAddress: String? {
+    public var wifiRouterAddress: String? {
         var name: [Int32] = [
             CTL_NET,
             PF_ROUTE,
@@ -107,11 +107,11 @@ extension SystemServices {
         return nil
     }
     
-    var connectedToWifi: Bool {
+    public var connectedToWifi: Bool {
         wifiIpAddress != nil
     }
     
-    var connectedToCellular: Bool {
+    public var connectedToCellular: Bool {
         cellularIpAddress != nil
     }
     

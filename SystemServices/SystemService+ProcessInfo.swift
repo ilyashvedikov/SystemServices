@@ -9,7 +9,7 @@ import Foundation
 
 extension SystemServices {
     
-    var processId: Int {
+    public var processId: Int {
         Int(getpid())
     }
     

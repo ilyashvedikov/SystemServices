@@ -11,39 +11,39 @@ import CoreMotion
 
 extension SystemServices {
     
-    var screenWidth: Int {
+    public var screenWidth: Int {
         Int(UIScreen.main.bounds.size.width)
     }
     
-    var screenHeight: Int {
+    public var screenHeight: Int {
         Int(UIScreen.main.bounds.size.height)
     }
     
-    var screenBrightnessLevel: Float {
+    public var screenBrightnessLevel: Float {
         Float(UIScreen.main.brightness)
     }
     
-    var deviceOrientation: UIDeviceOrientation {
+    public var deviceOrientation: UIDeviceOrientation {
         UIDevice.current.orientation
     }
     
-    var systemName: String {
+    public var systemName: String {
         UIDevice.current.systemName
     }
     
-    var deviceName: String {
+    public var deviceName: String {
         UIDevice.current.name
     }
     
-    var deviceModel: String {
+    public var deviceModel: String {
         UIDevice.current.model
     }
     
-    var identifierForVendor: String? {
+    public var identifierForVendor: String? {
         UIDevice.current.identifierForVendor?.uuidString
     }
     
-    var debuggerAttached: Bool {
+    public var debuggerAttached: Bool {
         var info = kinfo_proc()
         var mib = [CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid()]
         var size = MemoryLayout.stride(ofValue: info)
@@ -52,7 +52,7 @@ extension SystemServices {
         return (info.kp_proc.p_flag & P_TRACED) != 0
     }
     
-    var systemUptimeFormatted: String {
+    public var systemUptimeFormatted: String {
         let components = Calendar.current.dateComponents(
             [.day, .hour, .minute],
             from: Date(timeIntervalSinceNow: -ProcessInfo.processInfo.systemUptime),
@@ -61,19 +61,19 @@ extension SystemServices {
         return "\(components.day ?? 0) \(components.hour ?? 0) \(components.minute ?? 0)"
     }
     
-    var floorCountingAvailable: Bool {
+    public var floorCountingAvailable: Bool {
         CMPedometer.isFloorCountingAvailable()
     }
     
-    var stepCountingAvailable: Bool {
+    public var stepCountingAvailable: Bool {
         CMPedometer.isStepCountingAvailable()
     }
     
-    var distanceAvailable: Bool {
+    public var distanceAvailable: Bool {
         CMPedometer.isDistanceAvailable()
     }
     
-    var proximitySensorEnabled: Bool {
+    public var proximitySensorEnabled: Bool {
         let device = UIDevice.current
         device.isProximityMonitoringEnabled = true
         defer { device.isProximityMonitoringEnabled = false }
@@ -81,7 +81,7 @@ extension SystemServices {
         return device.isProximityMonitoringEnabled
     }
     
-    var deviceTypeRaw: String {
+    public var deviceTypeRaw: String {
         var systemInfo = utsname()
         uname(&systemInfo)
         
@@ -91,7 +91,7 @@ extension SystemServices {
         }
     }
     
-    var deviceTypeFormatted: String {
+    public var deviceTypeFormatted: String {
         switch deviceTypeRaw {
         // MARK: - iPhone
         case "i386": return "iPhone Simulator"

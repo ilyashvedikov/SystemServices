@@ -11,7 +11,7 @@ import MachO
 
 extension SystemServices {
     
-    var isJailbroken: Bool {
+    public var isJailbroken: Bool {
         jailbrakeFilesExist || jailbrakeLibsLoaded || canOpenCydia || canEditSandboxFiles || fridaRunning
     }
     

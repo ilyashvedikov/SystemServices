@@ -9,19 +9,19 @@ import Foundation
 
 extension SystemServices {
     
-    var timeZone: String {
+    public var timeZone: String {
         TimeZone.current.identifier
     }
     
-    var country: String {
+    public var country: String {
         Locale.current.identifier
     }
     
-    var language: String? {
+    public var language: String? {
         Locale.preferredLanguages.first
     }
     
-    var currencySymbol: String? {
+    public var currencySymbol: String? {
         Locale.current.currencySymbol
     }
     

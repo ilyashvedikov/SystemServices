@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct SystemServices {
-    static let shared = SystemServices()
+public struct SystemServices {
+    public static let shared = SystemServices()
 }

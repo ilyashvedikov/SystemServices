@@ -9,11 +9,11 @@ import Foundation
 
 extension SystemServices {
     
-    var numberOfProcessors: Int {
+    public var numberOfProcessors: Int {
         ProcessInfo.processInfo.processorCount
     }
     
-    var numberOfActiveProcessors: Int {
+    public var numberOfActiveProcessors: Int {
         ProcessInfo.processInfo.activeProcessorCount
     }
 

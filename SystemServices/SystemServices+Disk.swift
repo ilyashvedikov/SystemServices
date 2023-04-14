@@ -9,15 +9,15 @@ import Foundation
 
 extension SystemServices {
     
-    var totalDiskSpaceRaw: Int64? {
+    public var totalDiskSpaceRaw: Int64? {
         diskAttribute(for: .systemSize)
     }
     
-    var freeDiskSpaceRaw: Int64? {
+    public var freeDiskSpaceRaw: Int64? {
         diskAttribute(for: .systemFreeSize)
     }
     
-    var usedDiskSpaceRaw: Int64? {
+    public var usedDiskSpaceRaw: Int64? {
         (totalDiskSpaceRaw ?? 0) - (freeDiskSpaceRaw ?? 0)
     }
 }

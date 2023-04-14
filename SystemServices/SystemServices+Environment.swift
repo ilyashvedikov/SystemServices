@@ -10,27 +10,27 @@ import UIKit
 
 extension SystemServices {
     
-    var displayName: String? {
+    public var displayName: String? {
         Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String
     }
     
-    var appVersion: String? {
+    public var appVersion: String? {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     }
     
-    var buildNumber: String? {
+    public var buildNumber: String? {
         Bundle.main.infoDictionary?["CFBundleVersion"] as? String
     }
     
-    var systemVersion: String {
+    public var systemVersion: String {
         UIDevice.current.systemVersion
     }
     
-    var testFlight: Bool {
+    public var testFlight: Bool {
         Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
     }
     
-    var debug: Bool {
+    public var debug: Bool {
         #if DEBUG
             return true
         #else
@@ -38,7 +38,7 @@ extension SystemServices {
         #endif
     }
     
-    var testEnvironment: Bool {
+    public var testEnvironment: Bool {
         debug || testFlight
     }
     

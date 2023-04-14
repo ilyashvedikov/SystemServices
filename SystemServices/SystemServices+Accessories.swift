@@ -11,19 +11,19 @@ import AVFoundation
 
 extension SystemServices {
     
-    var accessoriesAttached: Bool {
+    public var accessoriesAttached: Bool {
         numberOfAttachedAccessories > 0
     }
     
-    var numberOfAttachedAccessories: Int {
+    public var numberOfAttachedAccessories: Int {
         connectedAccessories.count
     }
     
-    var headphonesAttached: Bool {
+    public var headphonesAttached: Bool {
         AVAudioSession.sharedInstance().currentRoute.outputs.contains(where: { $0.portType == .headphones })
     }
     
-    var attachedAccessoriesNames: String {
+    public var attachedAccessoriesNames: String {
         connectedAccessories.map { $0.manufacturer }.joined(separator: ",")
     }
     

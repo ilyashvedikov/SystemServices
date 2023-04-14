@@ -10,7 +10,7 @@ import UIKit
 
 extension SystemServices {
     
-    var fullyCharged: Bool {
+    public var fullyCharged: Bool {
         let device = UIDevice.current
         defer { device.isBatteryMonitoringEnabled = false }
         device.isBatteryMonitoringEnabled = true
@@ -18,7 +18,7 @@ extension SystemServices {
         return device.batteryState == .full
     }
     
-    var charging: Bool {
+    public var charging: Bool {
         let device = UIDevice.current
         defer { device.isBatteryMonitoringEnabled = false }
         device.isBatteryMonitoringEnabled = true

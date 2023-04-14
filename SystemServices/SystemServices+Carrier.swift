@@ -10,23 +10,23 @@ import CoreTelephony
 
 extension SystemServices {
     
-    var carrierName: String? {
+    public var carrierName: String? {
         CTTelephonyNetworkInfo().serviceSubscriberCellularProviders?.first?.value.carrierName
     }
     
-    var carrierISOCountryCode: String? {
+    public var carrierISOCountryCode: String? {
         CTTelephonyNetworkInfo().serviceSubscriberCellularProviders?.first?.value.isoCountryCode
     }
     
-    var carrierMobileCountryCode: String? {
+    public var carrierMobileCountryCode: String? {
         CTTelephonyNetworkInfo().serviceSubscriberCellularProviders?.first?.value.mobileCountryCode
     }
     
-    var carrierMobileNetworkCode: String? {
+    public var carrierMobileNetworkCode: String? {
         CTTelephonyNetworkInfo().serviceSubscriberCellularProviders?.first?.value.mobileNetworkCode
     }
     
-    var carrierAllowsVoip: Bool {
+    public var carrierAllowsVoip: Bool {
         CTTelephonyNetworkInfo().serviceSubscriberCellularProviders?.first?.value.allowsVOIP ?? false
     }
     

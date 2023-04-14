@@ -11,7 +11,7 @@ import SystemConfiguration
 
 extension SystemServices {
 
-    var totalMemory: UInt64 {
+    public var totalMemory: UInt64 {
         return ProcessInfo.processInfo.physicalMemory
     }
     
