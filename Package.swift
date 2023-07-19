@@ -16,9 +16,13 @@ let package = Package(
             ]
         )
     ],
+    dependencies: [
+        .package(url: "https://github.com/securing/IOSSecuritySuite.git", from: "1.9.9"),
+    ],
     targets: [
         .target(
             name: "SystemServices",
+            dependencies: ["IOSSecuritySuite"],
             path: "SystemServices"
         )
     ]
