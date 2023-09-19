@@ -13,7 +13,11 @@ import IOSSecuritySuite
 extension SystemServices {
     
     public var isJailbroken: Bool {
+        #if os(iOS)
         IOSSecuritySuite.amIJailbroken()
+        #else
+        false
+        #endif
     }
     
 }
